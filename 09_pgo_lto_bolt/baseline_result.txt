@@ -1,0 +1,3 @@
+Total time: 48.6387 seconds
+Iterations: 100
+Time per iteration: 486.387 ms
