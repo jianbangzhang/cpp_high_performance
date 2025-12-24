@@ -437,7 +437,7 @@ ctest --output-on-failure
 
 - **Issue**: 技术问题和 Bug 报告
 - **Discussion**: 功能讨论和想法分享
-- **Email**: performance-guide@example.com
+- **Email**: whdx072018@foxmail.com
 
 ---
 
