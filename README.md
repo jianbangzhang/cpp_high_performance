@@ -142,13 +142,8 @@ cd ../chapter05_simd
 - `-fprofile-generate` / `-fprofile-use` (PGO)
 - 各编译器特有的杀手级旗标
 
-**示例代码**:
-```cpp
-// 不同优化级别的性能对比
-// 见 chapter01_compiler_flags/optimization_levels.cpp
-```
 
-[详细文档](chapter01_compiler_flags/README.md)
+[详细文档](01_compiler_flags_nuclear/README.md)
 
 ### Chapter 2: 数据布局才是性能之神
 
@@ -165,7 +160,7 @@ SoA:  87.6 GB/s (缓存未命中率: 2%)
 加速比: 38×
 ```
 
-[详细文档](chapter02_data_layout/README.md)
+[详细文档](02_data_layout_soa_aos/README.md)
 
 ### Chapter 3: CRTP 完全体
 
@@ -182,7 +177,7 @@ CRTP 调用:       0.3 ns/call (内联后为 0)
 加速比: 4× 到 ∞
 ```
 
-[详细文档](chapter03_crtp/README.md)
+[详细文档](03_crtp_full_power/README.md)
 
 ### Chapter 4: 表达式模板
 
@@ -199,7 +194,7 @@ CRTP 调用:       0.3 ns/call (内联后为 0)
 加速比: 15× (在大矩阵上可达 50×)
 ```
 
-[详细文档](chapter04_expression_templates/README.md)
+[详细文档](04_expression_templates/README.md)
 
 ### Chapter 5: SIMD 手动 & 自动
 
@@ -217,7 +212,7 @@ CRTP 调用:       0.3 ns/call (内联后为 0)
 手动 AVX-512:      7 ms (14×)
 ```
 
-[详细文档](chapter05_simd/README.md)
+[详细文档](05_simd_avx512/README.md)
 
 ### Chapter 6: 内存分配器神器
 
@@ -235,7 +230,7 @@ ArenaAllocator:          2 ns/allocation
 加速比: 70× 到 425×
 ```
 
-[详细文档](chapter06_allocators/README.md)
+[详细文档](06_allocators_arena_pool/README.md)
 
 ### Chapter 7: 锁自由 & 无等待数据结构
 
@@ -253,7 +248,7 @@ Lock-free MPMC:           120 ns/op
 加速比: 10× 到 27×
 ```
 
-[详细文档](chapter07_lockfree/README.md)
+[详细文档](07_lockfree_spsc_mpmc/README.md)
 
 ### Chapter 8: 编译期计算 + constexpr 一切
 
@@ -270,7 +265,7 @@ Lock-free MPMC:           120 ns/op
 类型安全: 100%
 ```
 
-[详细文档](chapter08_constexpr/README.md)
+[详细文档](08_constexpr_all_the_things/README.md)
 
 ### Chapter 9: PGO + LTO + BOLT 终极流
 
@@ -288,7 +283,7 @@ Lock-free MPMC:           120 ns/op
 +BOLT:          168%
 ```
 
-[详细文档](chapter09_pgo_lto/README.md)
+[详细文档](09_pgo_lto_bolt/README.md)
 
 ### Chapter 10: 热点分析神器
 
@@ -298,7 +293,7 @@ Lock-free MPMC:           120 ns/op
 - Tracy Profiler 实时分析
 - FlameGraph 火焰图绘制
 
-[详细文档](chapter10_profiling/README.md)
+[详细文档](10_profiling_perf_vtune_tracy/README.md)
 
 ### Chapter 11: 真实世界项目剖析
 
@@ -308,7 +303,7 @@ Lock-free MPMC:           120 ns/op
 - LLVM 的编译器优化技巧
 - Google Abseil 的最佳实践
 
-[详细文档](chapter11_real_world/README.md)
+[详细文档](11_real_world_eigen_folly/README.md)
 
 ### Chapter 12: 终极 Checklist
 
@@ -321,7 +316,7 @@ Lock-free MPMC:           120 ns/op
 - [ ] 内存分配已优化
 - [ ] ...（完整清单见章节）
 
-[详细文档](chapter12_checklist/README.md)
+[详细文档](12_final_checklist/README.md)
 
 ## 🛠️ 性能测试框架
 
