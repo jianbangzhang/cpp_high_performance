@@ -27,59 +27,249 @@
 
 ```
 cpp-performance-guide/
-├── chapter01_compiler_flags/      # 编译器优化旗标
-│   ├── examples/
-│   ├── benchmarks/
+.
+├── 01_compiler_flags_nuclear
+│   ├── main.md
+│   ├── matrix_benchmark.cpp
 │   └── README.md
-├── chapter02_data_layout/         # SoA vs AoS
-│   ├── aos_benchmark.cpp
-│   ├── soa_benchmark.cpp
+├── 02_data_layout_soa_aos
+│   ├── aos_vs_soa_benchmark.cpp
 │   └── README.md
-├── chapter03_crtp/                # CRTP 模式
-│   ├── crtp_vs_virtual.cpp
-│   ├── static_polymorphism.cpp
+├── 03_crtp_full_power
+│   ├── crtp_complete_guide.cpp
+│   ├── crtp_complete_guide.s
 │   └── README.md
-├── chapter04_expression_templates/ # 表达式模板
-│   ├── matrix_et.cpp
-│   ├── lazy_evaluation.cpp
+├── 04_expression_templates
+│   ├── expression_templates_complete.cpp
+│   ├── expression_templates_complete.s
 │   └── README.md
-├── chapter05_simd/                # SIMD 优化
-│   ├── avx2_examples/
-│   ├── avx512_examples/
-│   ├── arm_neon/
+├── 05_simd_avx512
+│   ├── README.md
+│   └── simd_complete_guide.cpp
+├── 06_allocators_arena_pool
+│   ├── custom_allocators_complete.cpp
+│   ├── perf.sh
 │   └── README.md
-├── chapter06_allocators/          # 内存分配器
-│   ├── pool_allocator.cpp
-│   ├── arena_allocator.cpp
+├── 07_lockfree_spsc_mpmc
+│   ├── lockfree_datastructures_complete.cpp
 │   └── README.md
-├── chapter07_lockfree/            # 无锁数据结构
-│   ├── spsc_queue.cpp
-│   ├── mpmc_queue.cpp
+├── 08_constexpr_all_the_things
+│   ├── constexpr_complete_guide.cpp
+│   ├── constexpr_complete_guide.s
 │   └── README.md
-├── chapter08_constexpr/           # 编译期计算
-│   ├── compile_time_json.cpp
-│   ├── constexpr_algorithms.cpp
+├── 09_pgo_lto_bolt
+│   ├── baseline_result.txt
+│   ├── benchmark_program.cpp
+│   ├── lto_result.txt
+│   ├── o3_result.txt
+│   ├── pgo_lto_bolt_workflow.sh
+│   ├── pgo_result.txt
+│   ├── README.md
+│   └── result.txt
+├── 10_profiling_perf_vtune_tracy
+│   ├── FlameGraph
+│   │   ├── aix-perf.pl
+│   │   ├── demos
+│   │   │   ├── brkbytes-mysql.svg
+│   │   │   ├── cpu-grep.svg
+│   │   │   ├── cpu-illumos-ipdce.svg
+│   │   │   ├── cpu-illumos-syscalls.svg
+│   │   │   ├── cpu-illumos-tcpfuse.svg
+│   │   │   ├── cpu-iozone.svg
+│   │   │   ├── cpu-ipnet-diff.svg
+│   │   │   ├── cpu-linux-tar.svg
+│   │   │   ├── cpu-linux-tcpsend.svg
+│   │   │   ├── cpu-mixedmode-flamegraph-java.svg
+│   │   │   ├── cpu-mysql-filt.svg
+│   │   │   ├── cpu-mysql.svg
+│   │   │   ├── cpu-qemu-both.svg
+│   │   │   ├── cpu-zoomable.html
+│   │   │   ├── hotcold-kernelthread.svg
+│   │   │   ├── io-gzip.svg
+│   │   │   ├── io-mysql.svg
+│   │   │   ├── mallocbytes-bash.svg
+│   │   │   ├── off-bash.svg
+│   │   │   ├── off-mysql-busy.svg
+│   │   │   ├── off-mysql-idle.svg
+│   │   │   ├── palette-example-broken.svg
+│   │   │   ├── palette-example-working.svg
+│   │   │   └── README
+│   │   ├── dev
+│   │   │   ├── gatherhc-kern.d
+│   │   │   ├── gatherthc-kern.d
+│   │   │   ├── hcstackcollapse.pl
+│   │   │   ├── hotcoldgraph.pl
+│   │   │   ├── README
+│   │   │   └── thcstackcollapse.pl
+│   │   ├── difffolded.pl
+│   │   ├── docs
+│   │   │   └── cddl1.txt
+│   │   ├── example-dtrace-stacks.txt
+│   │   ├── example-dtrace.svg
+│   │   ├── example-perf-stacks.txt
+│   │   ├── example-perf.svg
+│   │   ├── files.pl
+│   │   ├── flamegraph.pl
+│   │   ├── flame.svg
+│   │   ├── jmaps
+│   │   ├── perf.data.old
+│   │   ├── pkgsplit-perf.pl
+│   │   ├── range-perf.pl
+│   │   ├── README.md
+│   │   ├── record-test.sh
+│   │   ├── stackcollapse-aix.pl
+│   │   ├── stackcollapse-bpftrace.pl
+│   │   ├── stackcollapse-chrome-tracing.py
+│   │   ├── stackcollapse-elfutils.pl
+│   │   ├── stackcollapse-faulthandler.pl
+│   │   ├── stackcollapse-gdb.pl
+│   │   ├── stackcollapse-go.pl
+│   │   ├── stackcollapse-ibmjava.pl
+│   │   ├── stackcollapse-instruments.pl
+│   │   ├── stackcollapse-java-exceptions.pl
+│   │   ├── stackcollapse-jstack.pl
+│   │   ├── stackcollapse-ljp.awk
+│   │   ├── stackcollapse-perf.pl
+│   │   ├── stackcollapse-perf-sched.awk
+│   │   ├── stackcollapse.pl
+│   │   ├── stackcollapse-pmc.pl
+│   │   ├── stackcollapse-recursive.pl
+│   │   ├── stackcollapse-sample.awk
+│   │   ├── stackcollapse-stap.pl
+│   │   ├── stackcollapse-vsprof.pl
+│   │   ├── stackcollapse-vtune-mc.pl
+│   │   ├── stackcollapse-vtune.pl
+│   │   ├── stackcollapse-wcp.pl
+│   │   ├── stackcollapse-xdebug.php
+│   │   ├── test
+│   │   │   ├── perf-cycles-instructions-01.txt
+│   │   │   ├── perf-dd-stacks-01.txt
+│   │   │   ├── perf-funcab-cmd-01.txt
+│   │   │   ├── perf-funcab-pid-01.txt
+│   │   │   ├── perf-iperf-stacks-pidtid-01.txt
+│   │   │   ├── perf-java-faults-01.txt
+│   │   │   ├── perf-java-stacks-01.txt
+│   │   │   ├── perf-java-stacks-02.txt
+│   │   │   ├── perf-js-stacks-01.txt
+│   │   │   ├── perf-mirageos-stacks-01.txt
+│   │   │   ├── perf-numa-stacks-01.txt
+│   │   │   ├── perf-rust-Yamakaky-dcpu.txt
+│   │   │   ├── perf-vertx-stacks-01.txt
+│   │   │   └── results
+│   │   │       ├── perf-cycles-instructions-01-collapsed-addrs.txt
+│   │   │       ├── perf-cycles-instructions-01-collapsed-all.txt
+│   │   │       ├── perf-cycles-instructions-01-collapsed-jit.txt
+│   │   │       ├── perf-cycles-instructions-01-collapsed-kernel.txt
+│   │   │       ├── perf-cycles-instructions-01-collapsed-pid.txt
+│   │   │       ├── perf-cycles-instructions-01-collapsed-tid.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-pid.txt
+│   │   │       ├── perf-dd-stacks-01-collapsed-tid.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-addrs.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-all.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-jit.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-kernel.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-pid.txt
+│   │   │       ├── perf-funcab-cmd-01-collapsed-tid.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-addrs.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-all.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-jit.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-kernel.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-pid.txt
+│   │   │       ├── perf-funcab-pid-01-collapsed-tid.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-addrs.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-all.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-jit.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-kernel.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-pid.txt
+│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-tid.txt
+│   │   │       ├── perf-java-faults-01-collapsed-addrs.txt
+│   │   │       ├── perf-java-faults-01-collapsed-all.txt
+│   │   │       ├── perf-java-faults-01-collapsed-jit.txt
+│   │   │       ├── perf-java-faults-01-collapsed-kernel.txt
+│   │   │       ├── perf-java-faults-01-collapsed-pid.txt
+│   │   │       ├── perf-java-faults-01-collapsed-tid.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-pid.txt
+│   │   │       ├── perf-java-stacks-01-collapsed-tid.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-addrs.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-all.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-jit.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-kernel.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-pid.txt
+│   │   │       ├── perf-java-stacks-02-collapsed-tid.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-pid.txt
+│   │   │       ├── perf-js-stacks-01-collapsed-tid.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-pid.txt
+│   │   │       ├── perf-mirageos-stacks-01-collapsed-tid.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-pid.txt
+│   │   │       ├── perf-numa-stacks-01-collapsed-tid.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-addrs.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-all.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-jit.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-kernel.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-pid.txt
+│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-tid.txt
+│   │   │       ├── perf-vertx-stacks-01-collapsed-addrs.txt
+│   │   │       ├── perf-vertx-stacks-01-collapsed-all.txt
+│   │   │       ├── perf-vertx-stacks-01-collapsed-jit.txt
+│   │   │       ├── perf-vertx-stacks-01-collapsed-kernel.txt
+│   │   │       ├── perf-vertx-stacks-01-collapsed-pid.txt
+│   │   │       └── perf-vertx-stacks-01-collapsed-tid.txt
+│   │   └── test.sh
+│   ├── git.sh
+│   ├── hotspot_example.cpp
+│   ├── main.md
 │   └── README.md
-├── chapter09_pgo_lto/             # 二进制优化
-│   ├── pgo_workflow/
-│   ├── lto_examples/
+├── 11_real_world_eigen_folly
+│   ├── compile.sh
+│   ├── main.md
+│   ├── mini_eigen.cpp
 │   └── README.md
-├── chapter10_profiling/           # 性能分析工具
-│   ├── perf_tutorial/
-│   ├── vtune_examples/
+├── 12_final_checklist
+│   ├── main.md
 │   └── README.md
-├── chapter11_real_world/          # 真实项目剖析
-│   ├── eigen_analysis/
-│   ├── folly_analysis/
-│   └── README.md
-├── chapter12_checklist/           # 终极检查清单
-│   └── README.md
-├── common/                        # 公共代码
-│   ├── benchmark_utils.hpp
-│   ├── timer.hpp
-│   └── cpu_features.hpp
+├── 13-optimization-doc
+│   ├── 10-nan_propagation.pdf
+│   ├── 1-optimizing_cpp.pdf
+│   ├── 2-optimizing_assembly.pdf
+│   ├── 3-microarchitecture.pdf
+│   ├── 4-instruction_tables.pdf
+│   ├── 5-calling_conventions.pdf
+│   ├── 6-vcl_manual.pdf
+│   ├── 7-forwardcom.pdf
+│   ├── 8-objconv-instructions.pdf
+│   ├── 9-asmlib-instructions.pdf
+│   ├── asmlib.zip
+│   ├── cpuidfake.zip
+│   ├── instruction_tables.ods
+│   ├── objconv.zip
+│   └── testp.zip
 ├── CMakeLists.txt
-└── README.md
+├── CONTRIBUTING.md
+├── LEARNING_PATH.md
+├── quick_start.sh
+├── README.md
+├── RESOURCES.md
+└── web.md
 ```
 
 ## 🚀 快速开始
@@ -115,21 +305,6 @@ cmake --build . -j$(nproc)
 ctest --output-on-failure
 ```
 
-### 快速体验
-
-```bash
-# 体验第一章：编译器旗标的威力
-cd build/chapter01_compiler_flags
-./compiler_flags_demo
-
-# 体验第二章：数据布局优化
-cd ../chapter02_data_layout
-./aos_vs_soa_benchmark
-
-# 体验第五章：SIMD 加速
-cd ../chapter05_simd
-./simd_comparison
-```
 
 ## 📚 章节详解
 
