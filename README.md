@@ -539,4 +539,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 **⚡ 让我们一起榨干 C++ 的每一滴性能！⚡**
 
-如有问题或建议，请提交 [Issue](https://github.com/yourusername/cpp-performance-guide/issues) 或联系维护者。
+如有问题或建议，请提交 [Issue](https://github.com/jianbangzhang/cpp-performance-guide/issues) 或联系维护者。
