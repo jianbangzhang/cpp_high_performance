@@ -82,7 +82,7 @@
 
 1. **Fork 仓库**
    ```bash
-   git clone https://github.com/yourusername/cpp-performance-guide.git
+   [https://github.com/jianbangzhang/cpp_high_performance.git](https://github.com/jianbangzhang/cpp_high_performance.git)
    cd cpp-performance-guide
    ```
 
