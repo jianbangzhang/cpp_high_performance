@@ -1,0 +1,167 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.codemap
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# PyTorch
+*.pth
+*.pt
+checkpoints/
+*.ckpt
+lightning_logs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# C/C++
+*.o
+*.a
+*.so
+*.out
+*.exe
+*.dll
+*.dylib
+*.obj
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+build/
+Build/
+BUILD/
+
+# LibTorch
+libtorch-*.zip
+
+# MPI
+*.mpirun
+*.hostfile
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+slurm-*.out
+nohup.out
+
+# Data
+data/
+datasets/
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.json
+*.csv
+!requirements.txt
+!**/requirements.txt
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# Profiling
+*.prof
+*.nvprof
+*.qdrep
+*.nsys-rep
+*.sqlite
+
+# Docker
+.dockerignore
+
+# Results
+results/
+outputs/
+experiments/
+
+# System
+.Trash-*/
+.nfs*
+
+# Tensorboard
+runs/
+tb_logs/
+tensorboard_logs/
+
+# Weights & Biases
+wandb/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Compiled documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# macOS
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test outputs
+test_output/
+**/test_results/
