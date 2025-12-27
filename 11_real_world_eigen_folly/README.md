@@ -99,3 +99,54 @@ Redis 是单线程 KV，但内部多优化。
 剖析 SOTA 项目如解剖大师作品，能让你内化性能理论，准备好在大厂/超算/游戏领域施展真功夫。
 
 
+#### 11.10 参考资料与资源
+
+### 11.10.1 官方与经典PDF资料
+以下是关于SOTA C++项目（如Eigen、ClickHouse、Unreal Engine、TensorFlow、Redis）性能优化与源码剖析的推荐PDF文档和技术论文。这些资源涵盖表达式模板、列式存储、渲染优化、XLA编译器以及单线程事件驱动模型，帮助你从理论决策到实际实现深入剖析本章项目。
+
+- **ClickHouse: New Open Source Columnar Database**：VLDB 2024论文，详细剖析ClickHouse架构、向量化执行、SIMD优化、JIT编译和哈希表变体。
+  - 下载链接: https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf
+
+- **BOLT: A Practical Binary Optimizer for Data Centers and Beyond**：虽非直接UE，但适用于游戏引擎二进制优化；结合UE性能指南。
+  - 下载链接: https://arxiv.org/pdf/1807.06735
+
+- **TensorFlow w/XLA: TensorFlow, Compiled!**：Jeff Dean演讲PDF，解释XLA在TensorFlow中的融合优化、JIT编译和Eigen集成。
+  - 下载链接: https://autodiff-workshop.github.io/slides/JeffDean.pdf
+
+- **Roofline Model Application in Scientific Computing**：虽非特定项目，但适用于Eigen/TensorFlow性能上限分析。
+  - 下载链接: https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RooflineVyNoYellow.pdf
+
+这些PDF免费下载。建议从ClickHouse VLDB论文开始，结合XLA演讲理解本章优化决策模型。
+
+### 11.10.2 GitHub代码仓库与示例
+以下是本章提及SOTA项目的官方源码仓库。这些仓库包含完整实现、基准测试和文档，便于直接剖析核心模块（如Eigen的PacketMath、ClickHouse的MergeTree、UE的Nanite、TF的XLA、Redis的SDS）。
+
+- **eigen-git-mirror/eigen**：Eigen官方仓库，表达式模板 + CRTP + SIMD抽象，包含Blocking矩阵乘法示例。
+  - 仓库链接: https://gitlab.com/libeigen/eigen
+  - 亮点: 纯头文件设计，平台无关SIMD（AVX/SVE）。
+
+- **ClickHouse/ClickHouse**：ClickHouse官方仓库，列式存储 + Vectorized执行 + MergeTree引擎。
+  - 仓库链接: https://github.com/ClickHouse/ClickHouse
+  - 亮点: SIMD/JIT优化源码，基准测试脚本。
+
+- **tensorflow/tensorflow**：TensorFlow官方仓库，XLA编译器 + Eigen集成 + Graph优化。
+  - 仓库链接: https://github.com/tensorflow/tensorflow
+  - 亮点: XLA子目录，异构计算示例。
+
+- **redis/redis**：Redis官方仓库，单线程事件驱动 + SDS + jemalloc + 渐进rehash。
+  - 仓库链接: https://github.com/redis/redis
+  - 亮点: 核心数据结构源码，零拷贝IO实现。
+
+- **EpicGames/UnrealEngine**（需注册访问）：Unreal Engine源码，ECS(AoSoA) + Nanite + 任务图并发。
+  - 仓库链接: https://github.com/EpicGames/UnrealEngine (私有，需Epic账号)
+  - 亮点: 渲染管线 + DOP优化。
+
+这些仓库多为C++，支持CMake构建。推荐克隆后使用perf/VTune剖析热点，验证本章理论（如Eigen零开销抽象、ClickHouse内存带宽饱和）。
+
+### 11.10.3 学习建议
+- **入门**：浏览Eigen仓库PacketMath，运行矩阵乘法基准对比表达式模板收益。
+- **进阶**：剖析ClickHouse MergeTree源码，测试列式 vs 行式性能。
+- **极致优化**：研究TensorFlow XLA融合，结合Redis单线程模型验证IO-bound优化。
+- **综合**：使用Unreal Engine源码（若可访问）探索实时DOP与并发。
+
+通过这些资源，你将内化SOTA项目的性能决策模型，准备在大厂/游戏/数据库领域应用真功夫。如果需要特定模块的扩展剖析或基准，请提供细节！

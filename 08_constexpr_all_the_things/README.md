@@ -84,3 +84,61 @@ doctest / Catch2 支持 constexpr 测试，编译失败即测试失败。
 constexpr 代表了 C++ “一切皆可编译期”的理论极致，将运行时计算前移，实现真正的零开销抽象。掌握其理论，能让你构建强大的编译期 DSL 与静态分析系统。
 
 
+#### 8.11 参考资料与资源
+
+### 8.11.1 官方与经典PDF资料
+以下是关于C++ constexpr的演进、理论模型、动态分配、标准提案以及高级应用的推荐PDF文档和技术论文。这些资源涵盖从C++11引入constexpr到C++20动态分配的突破、图灵完备性证明以及实际库设计，帮助你深入理解本章的编译期计算哲学。
+
+- **General Constant Expressions for System Programming Languages**：Gabriel Dos Reis和Bjarne Stroustrup的论文，介绍C++ constexpr的设计方法论和早期实现，已被C++11采纳。
+  - 下载链接: https://stroustrup.com/sac10-constexpr.pdf
+
+- **More constexpr containers (P0784R7)**：C++20 constexpr动态分配和std::vector/std::string支持的核心提案，详细说明transient allocation模型和限制。
+  - 下载链接: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p0784r7.html
+
+- **Constexpr in Practice (P0810R0)**：Ben Deane和Jason Turner的论文，探讨constexpr实际构建复杂结构（如JSON解析）的经验和挑战。
+  - 下载链接: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0810r0.pdf
+
+- **Relaxing constraints on constexpr functions (N3652)**：C++14 constexpr放宽限制的提案，允许循环、变异等。
+  - 下载链接: https://isocpp.org/files/papers/N3652.html
+
+- **A C++ Approach to Physical Units (P1935R0)**：mp-units库的标准化提案，展示constexpr在单位检查中的强大应用。
+  - 下载链接: https://mpusz.github.io/wg21-papers/papers/1935R0_a_cpp_approach_to_physical_units.html
+
+这些PDF免费下载。建议从P0784R7开始，理解C++20动态分配突破，再阅读P0810R0探索实际constexpr库设计。
+
+### 8.11.2 GitHub代码仓库与示例
+以下开源仓库包含constexpr高级实现、动态容器、编译期算法、JSON解析、正则表达式以及单位库。这些代码演示了编译期排序、哈希表、JSON/YAML解析等，帮助实践本章理论。
+
+- **hanickadot/compile-time-regular-expressions (CTRE)**：单头文件编译期正则表达式库，支持编译期匹配/捕获，几乎完全兼容PCRE。
+  - 仓库链接: https://github.com/hanickadot/compile-time-regular-expressions
+  - 亮点: 编译期错误诊断，完美示例constexpr解析复杂字符串。
+
+- **mpusz/mp-units**：现代C++单位与量库，全面constexpr，支持编译期维度检查和单位转换（C++29标准化候选）。
+  - 仓库链接: https://github.com/mpusz/mp-units
+  - 亮点: 编译期捕获单位错误，展示维度类型系统理论应用。
+
+- **kthohr/gcem**：编译期数学函数库（sin、cos、gamma等），使用generalized constexpr实现。
+  - 仓库链接: https://github.com/kthohr/gcem
+  - 亮点: 无运行时开销的浮点计算，证明constexpr浮点图灵完备性。
+
+- **lefticus/json2cpp**：将JSON文件编译为static constexpr数据结构，支持nlohmann::json API。
+  - 仓库链接: https://github.com/lefticus/json2cpp
+  - 亮点: 编译期JSON解析/序列化，零运行时开销配置加载。
+
+- **bolero-MURAKAMI/Sprout**：C++11/14 constexpr容器、算法、随机数、解析器等完整集合。
+  - 仓库链接: https://github.com/bolero-MURAKAMI/Sprout
+  - 亮点: 早期constexpr极限探索，包括射线追踪和合成器。
+
+- **SCT4SP/cest**：实验性constexpr标准库版本，支持vector、string等动态容器。
+  - 仓库链接: https://github.com/SCT4SP/cest
+  - 亮点: C++20 constexpr动态分配的完整实现。
+
+这些仓库多为头文件，支持C++20+。推荐克隆后测试编译期JSON解析或单位检查，验证零运行时开销。
+
+### 8.11.3 学习建议
+- **入门**：阅读P0784R7 PDF，运行CTRE仓库正则示例。
+- **进阶**：实践mp-units单位检查，构建编译期配置系统。
+- **极致优化**：使用gcem实现编译期数学表，结合json2cpp嵌入配置。
+- **挑战**：扩展Sprout，实现自定义编译期DSL。
+
+通过这些资源，你将能构建Eigen级别的constexpr库，实现真正的零开销抽象。如果需要特定应用的扩展代码或更多提案，请提供细节！

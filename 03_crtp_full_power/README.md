@@ -79,3 +79,52 @@ concept Drawable = requires(T t) {
 CRTP 是现代 C++ 模板元编程的基石，代表了“编译期计算一切”的哲学。掌握其完整理论体系，是写出 Eigen 级别库的必经之路。
 
 
+#### 3.9 参考资料与资源
+
+### 3.9.1 官方与经典PDF资料
+以下是关于CRTP（Curiously Recurring Template Pattern）的推荐PDF文档和幻灯片。这些资源从基础介绍到高级应用（如静态多态、表达式模板、Mixin等），并包含与Eigen等库的实际结合，帮助你深入理解CRTP的理论与实践。
+
+- **Curiously Recurring Template Pattern (CRTP) By Avi Lachmish**：Core C++会议闪电演讲，包含CRTP基础、静态多态和常见陷阱。
+  - 下载链接: https://corecppil.github.io/Meetups/2018-06-28_Lightening-Storm/CRTP.pdf
+
+- **Mixin and CRTP in C++98/11**：Zoltán Porkoláb的讲座笔记，深入探讨Mixin、策略注入与CRTP的结合。
+  - 下载链接: https://gsd.web.elte.hu/lectures/bolyai/2018/mixin_crtp/mixin_crtp.pdf
+
+
+这些PDF大多免费下载或查看。建议从第一份开始阅读，逐步深入表达式模板与Eigen的应用。
+
+### 3.9.2 GitHub代码仓库与示例
+以下开源仓库包含CRTP的完整实现、示例和高级模式（如Mixin、策略模式、静态接口、与C++20 Concepts结合）。这些代码可直接运行，帮助你实践本章内容。
+
+- **the-risk-taker/crtp-curiously-recurring-template-pattern**：专为公司闪电演讲准备的CRTP示例集，涵盖不同模式、控制台输出解释，便于快速理解。
+  - 仓库链接: https://github.com/the-risk-taker/crtp-curiously-recurring-template-pattern
+  - 亮点: 多示例演示静态多态、Mixin等。
+
+- **pelocpp/cpp_modern_examples**：现代C++示例集合，包含详细CRTP章节（静态多态、性能对比）。
+  - 仓库链接: https://github.com/pelocpp/cpp_modern_examples/tree/master/GeneralSnippets/CRTP
+  - 亮点: 与虚函数性能对比，适合进阶优化。
+
+- **mmarkeloff/cpp-crtp-singleton**：使用CRTP实现线程安全单例的头文件库，示例完整。
+  - 仓库链接: https://github.com/mmarkeloff/cpp-crtp-singleton
+  - 亮点: CRTP在设计模式中的实际应用。
+
+- **atomgalaxy/libciabatta**：C++ Mixin支持库，使用CRTP实现“沙威奇式”多Mixin组合。
+  - 仓库链接: https://github.com/atomgalaxy/libciabatta
+  - 亮点: 高级Mixin模式，CMake集成，便于库开发。
+
+- **rib2bit/static-polymorphism-crtp**：静态多态CRTP示例，包含抽象基类模板与派生实现。
+  - 仓库链接: https://github.com/rib2bit/static-polymorphism-crtp
+  - 亮点: 简洁核心示例，易于扩展到静态接口。
+
+- **nojhan/crtp_functor_ttp**：CRTP与继承实现的Functor模式性能对比示例。
+  - 仓库链接: https://github.com/nojhan/crtp_functor_ttp
+  - 亮点: 性能基准测试，证明CRTP零开销优势。
+
+这些仓库多为C++11/17/20，支持Clang/GCC编译。推荐克隆后运行示例，结合本章代码对比学习。对于与Concepts结合，可参考相关博客扩展这些仓库。
+
+### 3.9.3 学习建议
+- **入门**：从Slideshare的CRTP+Expression Templates PDF开始，结合the-risk-taker仓库运行基本示例。
+- **进阶**：阅读Mixin相关PDF，实践libciabatta的多Mixin组合。
+- **性能与现代C++**：使用cpp_modern_examples对比虚函数，探索C++20 Concepts替换CRTP的部分用法（参考Fluent C++博客）。
+- **应用**：Eigen库源码是CRTP的巅峰实现，建议查看其MatrixBase<CRTPDerived>部分。
+

@@ -97,5 +97,62 @@ Intel Restricted Transactional Memory (RTM)：xbegin/xend。
 
 锁自由与无等待代表了并发编程的理论极限：系统在任意争用下保持高吞吐与低延迟。掌握其理论，能让你设计出在大规模多核系统上线性扩展的数据结构，是高并发服务器、实时系统、数据库内核工程师的必备素养。
 
+#### 7.12 参考资料与资源
+
+### 7.12.1 官方与经典PDF资料
+以下是关于锁自由（Lock-Free）和无等待（Wait-Free）并发数据结构、进度条件、ABA问题、Hazard Pointer、RCU、Harris-Michael链表、Treiber栈、Michael-Scott队列以及硬件事务内存（HTM）的推荐PDF文档和技术论文。这些资源从理论定义、证明到实际实现，帮助你深入掌握本章并发模型的理论极限。
+
+- **Wait-Free Synchronization**：Maurice Herlihy 1991 年经典论文，严格定义Obstruction-Free、Lock-Free和Wait-Free进度条件，并证明CAS的通用性。
+  - 下载链接: https://cs.brown.edu/~mph/Herlihy91/p124-herlihy.pdf
+
+- **A Pragmatic Implementation of Non-Blocking Linked-Lists**：Timothy L. Harris 2001 年论文，提出Harris锁自由链表（标记删除位），解决ABA问题的前身。
+  - 下载链接: https://www.cl.cam.ac.uk/research/srg/netos/papers/2001-caslists.pdf
+
+- **Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue Algorithms**：Maged M. Michael 和 Michael L. Scott 1996 年论文，提出经典Lock-Free M&S队列。
+  - 下载链接: https://www.cs.rochester.edu/u/scott/papers/1996_PODC_queues.pdf
+
+- **Hazard Pointers: Safe Memory Reclamation for Lock-Free Objects**：Maged M. Michael 2004 年论文，提出Hazard Pointers解决内存回收和ABA问题。
+  - 下载链接: https://www.cs.otago.ac.nz/cosc440/readings/hazard-pointers.pdf
+
+- **User-Level Implementations of Read-Copy Update**：Mathieu Desnoyers 等 2012 年论文，用户空间RCU实现，读侧零锁。
+  - 下载链接: https://www.efficios.com/pub/rcu/urcu-main.pdf
+
+- **Transactional Memory: Architectural Support for Lock-Free Data Structures**：Maurice Herlihy 和 J. Eliot B. Moss 1993 年论文，提出硬件事务内存（HTM）概念。
+  - 下载链接: (经典论文，可搜索ISCA 1993)
+
+这些PDF免费下载。建议从Herlihy 1991开始，建立进度条件理论基础，再阅读具体结构论文。
+
+### 7.12.2 GitHub代码仓库与示例
+以下开源仓库包含锁自由/无等待数据结构的完整实现、基准测试和内存回收方案（如Hazard Pointers、RCU）。这些代码多为C++，涵盖栈、队列、链表、哈希表等，可直接运行验证本章性能模型。
+
+- **concurrencykit/ck**：Concurrency Kit官方仓库，高性能并发原语、锁自由栈/队列/链表、Hazard Pointers和Epoch-based回收。
+  - 仓库链接: https://github.com/concurrencykit/ck
+  - 亮点: 生产级实现，支持多种内存回收，基准测试齐全。
+
+- **DNedic/lockfree**：标准C++11锁自由数据结构集合，包括栈、队列、链表，支持有界/无界。
+  - 仓库链接: https://github.com/DNedic/lockfree
+  - 亮点: 纯C++11，无外部依赖，易于集成。
+
+- **rigtorp/awesome-lockfree**：锁自由/无等待编程资源精选，包括Boost.Lockfree、libcds等库链接。
+  - 仓库链接: https://github.com/rigtorp/awesome-lockfree
+  - 亮点: 一站式资源列表，包含SPSC/MPMC队列、栈实现。
+
+- **khizmax/libcds**：C++并发数据结构库，包含Michael哈希表、Feldman Wait-Free哈希、Harris/Michael链表。
+  - 仓库链接: https://github.com/khizmax/libcds
+  - 亮点: 多种锁自由/细粒度锁实现，支持迭代器。
+
+- **cameron314/concurrentqueue**：单生产者/多消费者锁自由队列（M&S变体），高性能。
+  - 仓库链接: https://github.com/cameron314/concurrentqueue
+  - 亮点: Moodycamel出品，广泛用于生产环境。
+
+这些仓库支持C++11/17/20，CMake构建。推荐克隆后运行基准，对比锁 vs 锁自由在高争用下的5～100倍加速。
+
+### 7.12.3 学习建议
+- **入门**：阅读Herlihy 1991 PDF，运行concurrencykit/ck的栈/队列示例。
+- **进阶**：实现Harris链表（参考DNedic仓库），结合Hazard Pointers解决内存回收。
+- **极致优化**：研究libcds的Wait-Free哈希，测试RCU读侧零锁优势。
+- **验证**：使用awesome-lockfree列表扩展，测量线性化点和ABA处理开销。
+
+通过这些资源，你将能设计在大规模多核系统上线性扩展的并发结构。如果需要特定结构的扩展代码或基准，请提供细节！
 
 
