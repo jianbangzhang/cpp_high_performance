@@ -1,4 +1,4 @@
-# C++ 高性能编程完全指南 🚀
+# C++ 高性能编程完全指南 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
@@ -6,7 +6,7 @@
 
 > 从编译器旗标到无锁数据结构，从 SIMD 到 PGO，带你榨干每一滴性能
 
-## 📊 性能提升一览表
+## 性能提升一览表
 
 | 章节 | 主题 | 典型加速比 | 适合人群 |
 |------|------|-----------|----------|
@@ -24,280 +24,220 @@
 | 11 | 真实世界 SOTA 项目源码剖析 | 学到真功夫 | 准备去大厂/超算/游戏公司 |
 | 12 | 终极 Checklist：上线前必跑 27 条 | 防止翻车 | 所有人 |
 
-## 🎯 项目结构
+## 项目结构
 
 ```
 cpp-performance-guide/
-├── 00_stl_ptr_oop
+├── 00_stl_ptr_oop_ms
 │   ├── ai_graph2.cpp
 │   ├── ai_graph.cpp
 │   ├── compile_run.sh
-│   ├── doc1.md
-│   ├── doc2.md
-│   ├── doc3.md
-│   ├── doc4.md
-│   ├── doc5.md
-│   ├── doc6.md
-│   ├── doc7.md
-│   ├── doc8.md
-│   ├── doc9.md
+│   ├── doc
+│   │   ├── C++.Primer.5th.Edition_2013.pdf
+│   │   └── Scott_Meyers_Effective_Modern_C++.pdf
+│   ├── md
+│   │   ├── doc1.md
+│   │   ├── doc2.md
+│   │   ├── doc3.md
+│   │   ├── doc4.md
+│   │   ├── doc5.md
+│   │   ├── doc6.md
+│   │   ├── doc7.md
+│   │   ├── doc8.md
+│   │   └── doc9.md
 │   └── README.md
 ├── 01_compiler_flags_nuclear
-│   ├── doc1.md
-│   ├── main.md
 │   ├── matrix_benchmark.cpp
+│   ├── md
+│   │   ├── doc1.md
+│   │   └── main.md
 │   └── README.md
 ├── 02_data_layout_soa_aos
 │   ├── aos_vs_soa_benchmark.cpp
-│   ├── doc1.md
+│   ├── doc
+│   │   ├── dodbook.pdf
+│   │   ├── DOD-Cpp.pdf
+│   │   ├── introduction-to-data-oriented-design.pdf
+│   │   ├── practical-examples-in-data-oriented-design.pdf
+│   │   └── St11ASX_CUDA.pdf
+│   ├── md
+│   │   └── doc1.md
 │   └── README.md
 ├── 03_crtp_full_power
 │   ├── crtp_complete_guide.cpp
 │   ├── crtp_complete_guide.s
-│   ├── doc1.md
+│   ├── doc
+│   │   ├── CRTP.pdf
+│   │   └── mixin_crtp.pdf
+│   ├── md
+│   │   └── doc1.md
 │   └── README.md
 ├── 04_expression_templates
-│   ├── doc1.md
 │   ├── expression_templates_complete.cpp
 │   ├── expression_templates_complete.s
+│   ├── md
+│   │   └── doc1.md
 │   └── README.md
 ├── 05_simd_avx512
-│   ├── doc10.md
-│   ├── doc11.md
-│   ├── doc12.md
-│   ├── doc1.md
-│   ├── doc2.md
-│   ├── doc3.md
-│   ├── doc4.md
-│   ├── doc5.md
-│   ├── doc6.md
-│   ├── doc7.md
-│   ├── doc8.md
-│   ├── doc9.md
+│   ├── doc
+│   │   ├── 102476_0001_00_en_introduction-to-sve.pdf
+│   │   ├── 3 - Intro to SVE.pdf
+│   │   ├── com.arm.doc.102699_0100_00_en.pdf
+│   │   ├── DDI0584B_a_SVE_supp_armv9A.pdf
+│   │   └── sve-ieee-micro-2017.pdf
+│   ├── md
+│   │   ├── doc10.md
+│   │   ├── doc11.md
+│   │   ├── doc12.md
+│   │   ├── doc13.md
+│   │   ├── doc1.md
+│   │   ├── doc2.md
+│   │   ├── doc3.md
+│   │   ├── doc4.md
+│   │   ├── doc5.md
+│   │   ├── doc6.md
+│   │   ├── doc7.md
+│   │   ├── doc8.md
+│   │   └── doc9.md
 │   ├── README.md
 │   └── simd_complete_guide.cpp
 ├── 06_allocators_arena_pool
 │   ├── custom_allocators_complete.cpp
-│   ├── doc1.md
-│   ├── doc2.md
+│   ├── doc
+│   │   ├── 1804.03436v2.pdf
+│   │   ├── berger-oopsla2002.pdf
+│   │   ├── BH_US_12_Argyroudis_Exploiting_the_ jemalloc_Memory_ Allocator_WP.pdf
+│   │   ├── lto.pdf
+│   │   ├── n3916.pdf
+│   │   └── paper.pdf
+│   ├── md
+│   │   ├── doc1.md
+│   │   ├── doc2.md
+│   │   └── doc3.md
 │   ├── perf.sh
 │   └── README.md
 ├── 07_lockfree_spsc_mpmc
-│   ├── doc1.md
+│   ├── doc
+│   │   ├── 1996_PODC_queues.pdf
+│   │   ├── 2001-caslists.pdf
+│   │   ├── hazard-pointers.pdf
+│   │   ├── herlihy93transactional.pdf
+│   │   ├── p124-herlihy.pdf
+│   │   └── urcu-main.pdf
 │   ├── lockfree_datastructures_complete.cpp
+│   ├── md
+│   │   └── doc1.md
 │   └── README.md
 ├── 08_constexpr_all_the_things
 │   ├── constexpr_complete_guide.cpp
 │   ├── constexpr_complete_guide.s
+│   ├── doc
+│   │   ├── p0810r0.pdf
+│   │   └── sac10-constexpr.pdf
 │   └── README.md
 ├── 09_pgo_lto_bolt
-│   ├── baseline_result.txt
 │   ├── benchmark_program.cpp
-│   ├── doc1.md
-│   ├── doc2.md
-│   ├── lto_result.txt
-│   ├── o3_result.txt
+│   ├── doc
+│   │   ├── 1010.2196v2.pdf
+│   │   ├── 1411.6361v1.pdf
+│   │   ├── 1807.06735v2.pdf
+│   │   ├── 2507.16649v1.pdf
+│   │   ├── af0a39422b19fbbe063479f5d3a71d9278677314.pdf
+│   │   └── baseline_result.txt
+│   ├── md
+│   │   ├── doc1.md
+│   │   └── doc2.md
 │   ├── pgo_lto_bolt_workflow.sh
-│   ├── pgo_result.txt
-│   ├── README.md
-│   └── result.txt
+│   └── README.md
 ├── 10_profiling_perf_vtune_tracy
-│   ├── FlameGraph
-│   │   ├── aix-perf.pl
-│   │   ├── demos
-│   │   │   ├── brkbytes-mysql.svg
-│   │   │   ├── cpu-grep.svg
-│   │   │   ├── cpu-illumos-ipdce.svg
-│   │   │   ├── cpu-illumos-syscalls.svg
-│   │   │   ├── cpu-illumos-tcpfuse.svg
-│   │   │   ├── cpu-iozone.svg
-│   │   │   ├── cpu-ipnet-diff.svg
-│   │   │   ├── cpu-linux-tar.svg
-│   │   │   ├── cpu-linux-tcpsend.svg
-│   │   │   ├── cpu-mixedmode-flamegraph-java.svg
-│   │   │   ├── cpu-mysql-filt.svg
-│   │   │   ├── cpu-mysql.svg
-│   │   │   ├── cpu-qemu-both.svg
-│   │   │   ├── cpu-zoomable.html
-│   │   │   ├── hotcold-kernelthread.svg
-│   │   │   ├── io-gzip.svg
-│   │   │   ├── io-mysql.svg
-│   │   │   ├── mallocbytes-bash.svg
-│   │   │   ├── off-bash.svg
-│   │   │   ├── off-mysql-busy.svg
-│   │   │   ├── off-mysql-idle.svg
-│   │   │   ├── palette-example-broken.svg
-│   │   │   ├── palette-example-working.svg
-│   │   │   └── README
-│   │   ├── dev
-│   │   │   ├── gatherhc-kern.d
-│   │   │   ├── gatherthc-kern.d
-│   │   │   ├── hcstackcollapse.pl
-│   │   │   ├── hotcoldgraph.pl
-│   │   │   ├── README
-│   │   │   └── thcstackcollapse.pl
-│   │   ├── difffolded.pl
-│   │   ├── docs
-│   │   │   └── cddl1.txt
-│   │   ├── example-dtrace-stacks.txt
-│   │   ├── example-dtrace.svg
-│   │   ├── example-perf-stacks.txt
-│   │   ├── example-perf.svg
-│   │   ├── files.pl
-│   │   ├── flamegraph.pl
-│   │   ├── flame.svg
-│   │   ├── jmaps
-│   │   ├── perf.data.old
-│   │   ├── pkgsplit-perf.pl
-│   │   ├── range-perf.pl
-│   │   ├── README.md
-│   │   ├── record-test.sh
-│   │   ├── stackcollapse-aix.pl
-│   │   ├── stackcollapse-bpftrace.pl
-│   │   ├── stackcollapse-chrome-tracing.py
-│   │   ├── stackcollapse-elfutils.pl
-│   │   ├── stackcollapse-faulthandler.pl
-│   │   ├── stackcollapse-gdb.pl
-│   │   ├── stackcollapse-go.pl
-│   │   ├── stackcollapse-ibmjava.pl
-│   │   ├── stackcollapse-instruments.pl
-│   │   ├── stackcollapse-java-exceptions.pl
-│   │   ├── stackcollapse-jstack.pl
-│   │   ├── stackcollapse-ljp.awk
-│   │   ├── stackcollapse-perf.pl
-│   │   ├── stackcollapse-perf-sched.awk
-│   │   ├── stackcollapse.pl
-│   │   ├── stackcollapse-pmc.pl
-│   │   ├── stackcollapse-recursive.pl
-│   │   ├── stackcollapse-sample.awk
-│   │   ├── stackcollapse-stap.pl
-│   │   ├── stackcollapse-vsprof.pl
-│   │   ├── stackcollapse-vtune-mc.pl
-│   │   ├── stackcollapse-vtune.pl
-│   │   ├── stackcollapse-wcp.pl
-│   │   ├── stackcollapse-xdebug.php
-│   │   ├── test
-│   │   │   ├── perf-cycles-instructions-01.txt
-│   │   │   ├── perf-dd-stacks-01.txt
-│   │   │   ├── perf-funcab-cmd-01.txt
-│   │   │   ├── perf-funcab-pid-01.txt
-│   │   │   ├── perf-iperf-stacks-pidtid-01.txt
-│   │   │   ├── perf-java-faults-01.txt
-│   │   │   ├── perf-java-stacks-01.txt
-│   │   │   ├── perf-java-stacks-02.txt
-│   │   │   ├── perf-js-stacks-01.txt
-│   │   │   ├── perf-mirageos-stacks-01.txt
-│   │   │   ├── perf-numa-stacks-01.txt
-│   │   │   ├── perf-rust-Yamakaky-dcpu.txt
-│   │   │   ├── perf-vertx-stacks-01.txt
-│   │   │   └── results
-│   │   │       ├── perf-cycles-instructions-01-collapsed-addrs.txt
-│   │   │       ├── perf-cycles-instructions-01-collapsed-all.txt
-│   │   │       ├── perf-cycles-instructions-01-collapsed-jit.txt
-│   │   │       ├── perf-cycles-instructions-01-collapsed-kernel.txt
-│   │   │       ├── perf-cycles-instructions-01-collapsed-pid.txt
-│   │   │       ├── perf-cycles-instructions-01-collapsed-tid.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-pid.txt
-│   │   │       ├── perf-dd-stacks-01-collapsed-tid.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-addrs.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-all.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-jit.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-kernel.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-pid.txt
-│   │   │       ├── perf-funcab-cmd-01-collapsed-tid.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-addrs.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-all.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-jit.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-kernel.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-pid.txt
-│   │   │       ├── perf-funcab-pid-01-collapsed-tid.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-addrs.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-all.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-jit.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-kernel.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-pid.txt
-│   │   │       ├── perf-iperf-stacks-pidtid-01-collapsed-tid.txt
-│   │   │       ├── perf-java-faults-01-collapsed-addrs.txt
-│   │   │       ├── perf-java-faults-01-collapsed-all.txt
-│   │   │       ├── perf-java-faults-01-collapsed-jit.txt
-│   │   │       ├── perf-java-faults-01-collapsed-kernel.txt
-│   │   │       ├── perf-java-faults-01-collapsed-pid.txt
-│   │   │       ├── perf-java-faults-01-collapsed-tid.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-pid.txt
-│   │   │       ├── perf-java-stacks-01-collapsed-tid.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-addrs.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-all.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-jit.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-kernel.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-pid.txt
-│   │   │       ├── perf-java-stacks-02-collapsed-tid.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-pid.txt
-│   │   │       ├── perf-js-stacks-01-collapsed-tid.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-pid.txt
-│   │   │       ├── perf-mirageos-stacks-01-collapsed-tid.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-pid.txt
-│   │   │       ├── perf-numa-stacks-01-collapsed-tid.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-addrs.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-all.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-jit.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-kernel.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-pid.txt
-│   │   │       ├── perf-rust-Yamakaky-dcpu-collapsed-tid.txt
-│   │   │       ├── perf-vertx-stacks-01-collapsed-addrs.txt
-│   │   │       ├── perf-vertx-stacks-01-collapsed-all.txt
-│   │   │       ├── perf-vertx-stacks-01-collapsed-jit.txt
-│   │   │       ├── perf-vertx-stacks-01-collapsed-kernel.txt
-│   │   │       ├── perf-vertx-stacks-01-collapsed-pid.txt
-│   │   │       └── perf-vertx-stacks-01-collapsed-tid.txt
-│   │   └── test.sh
+│   ├── doc
+│   │   ├── 2927299.2927301.pdf
+│   │   ├── PerfTool.pdf
+│   │   ├── RooflineVyNoYellow.pdf
+│   │   ├── tracy.pdf
+│   │   ├── vtune-profiler_cookbook_2023.2-766316-782573 (1).pdf
+│   │   └── vtune-profiler_cookbook_2023.2-766316-782573.pdf
 │   ├── git.sh
 │   ├── hotspot_example.cpp
-│   ├── main.md
+│   ├── md
+│   │   └── main.md
 │   └── README.md
 ├── 11_real_world_eigen_folly
 │   ├── compile.sh
-│   ├── main.md
+│   ├── doc
+│   │   ├── 1807.06735v2.pdf
+│   │   ├── JeffDean.pdf
+│   │   ├── p3731-schulze.pdf
+│   │   └── RooflineVyNoYellow.pdf
+│   ├── md
+│   │   └── main.md
 │   ├── mini_eigen.cpp
 │   └── README.md
 ├── 12_final_checklist
-│   ├── main.md
+│   ├── md
+│   │   └── main.md
 │   └── README.md
 ├── 13-optimization-doc
-│   ├── 10-nan_propagation.pdf
-│   ├── 1-optimizing_cpp.pdf
-│   ├── 2-optimizing_assembly.pdf
-│   ├── 3-microarchitecture.pdf
-│   ├── 4-instruction_tables.pdf
-│   ├── 5-calling_conventions.pdf
-│   ├── 6-vcl_manual.pdf
-│   ├── 7-forwardcom.pdf
-│   ├── 8-objconv-instructions.pdf
-│   ├── 9-asmlib-instructions.pdf
-│   ├── asmlib.zip
-│   ├── cpuidfake.zip
-│   ├── instruction_tables.ods
-│   ├── objconv.zip
-│   └── testp.zip
+│   ├── code
+│   │   ├── asmlib
+│   │   │   ├── asmlib.h
+│   │   │   ├── asmlib-instructions.pdf
+│   │   │   ├── asmlibran.h
+│   │   │   ├── asmlibSrc.zip
+│   │   │   ├── inteldispatchpatch.zip
+│   │   │   ├── libacof32.lib
+│   │   │   ├── libacof32o.lib
+│   │   │   ├── libacof64.lib
+│   │   │   ├── libacof64o.lib
+│   │   │   ├── libad32.dll
+│   │   │   ├── libad32.lib
+│   │   │   ├── libad64.dll
+│   │   │   ├── libad64.lib
+│   │   │   ├── libaelf32.a
+│   │   │   ├── libaelf32o.a
+│   │   │   ├── libaelf64.a
+│   │   │   ├── libaelf64o.a
+│   │   │   ├── libamac32.a
+│   │   │   ├── libamac32o.a
+│   │   │   ├── libamac64.a
+│   │   │   ├── libamac64o.a
+│   │   │   ├── libaomf32.lib
+│   │   │   ├── libaomf32o.lib
+│   │   │   └── license.txt
+│   │   ├── cpuidfake
+│   │   │   ├── cpuidFake.exe
+│   │   │   ├── cpuidFakeSource.zip
+│   │   │   ├── DriverSource.zip
+│   │   │   ├── Instructions.txt
+│   │   │   ├── MSRDriver32.sys
+│   │   │   └── MSRDriver64.sys
+│   │   ├── objconv
+│   │   │   ├── changelog.txt
+│   │   │   ├── extras.zip
+│   │   │   ├── objconv.exe
+│   │   │   ├── objconv-instructions.pdf
+│   │   │   └── source.zip
+│   │   └── testp
+│   │       ├── DriverSrcLinux.zip
+│   │       ├── DriverSrcWin.zip
+│   │       ├── PMCTest.zip
+│   │       ├── testp.pdf
+│   │       └── TestScripts.zip
+│   └── doc
+│       ├── 10-nan_propagation.pdf
+│       ├── 161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf
+│       ├── 1-optimizing_cpp.pdf
+│       ├── 2408.14158v2.pdf
+│       ├── 2-optimizing_assembly.pdf
+│       ├── 3-microarchitecture.pdf
+│       ├── 4-instruction_tables.pdf
+│       ├── 5-calling_conventions.pdf
+│       ├── 6-vcl_manual.pdf
+│       ├── 7-forwardcom.pdf
+│       ├── 8-objconv-instructions.pdf
+│       ├── 9-asmlib-instructions.pdf
+│       ├── FreeRTOS_Reference_Manual_V10.0.0.pdf
+│       └── instruction_tables.ods
 ├── CMakeLists.txt
 ├── CONTRIBUTING.md
 ├── LEARNING_PATH.md
@@ -308,7 +248,7 @@ cpp-performance-guide/
 └── web.md
 ```
 
-## 🚀 快速开始
+## 快速开始
 
 ### 环境要求
 
@@ -342,7 +282,7 @@ ctest --output-on-failure
 ```
 
 
-## 📚 章节详解
+## 章节详解
 
 ### Chapter 1: 现代 C++ 编译器旗标核弹级清单
 
@@ -529,7 +469,7 @@ Lock-free MPMC:           120 ns/op
 
 [详细文档](12_final_checklist/README.md)
 
-## 🛠️ 性能测试框架
+## 性能测试框架
 
 本项目使用自研的轻量级 benchmark 框架：
 
@@ -544,14 +484,14 @@ BENCHMARK(MyFunction) {
 BENCHMARK_MAIN();
 ```
 
-## 📖 推荐阅读
+## 推荐阅读
 
 - [Agner Fog's Optimization Manuals](https://www.agner.org/optimize/)
 - [Intel Intrinsics Guide](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html)
 - [Compiler Explorer (godbolt.org)](https://godbolt.org/)
 - [C++ Core Guidelines - Performance](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-performance)
 
-## 🤝 贡献指南
+## 贡献指南
 
 欢迎提交 PR！请确保：
 1. 代码通过所有编译器测试
@@ -559,11 +499,11 @@ BENCHMARK_MAIN();
 3. 添加详细注释
 4. 更新相关文档
 
-## 📄 许可证
+## 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
 
-## 🙏 致谢
+## 致谢
 
 感谢以下项目和资源的启发：
 - [Eigen](https://eigen.tuxfamily.org/)
